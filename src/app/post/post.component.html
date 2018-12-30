@@ -1,0 +1,14 @@
+<!--Post Block-->
+  <div class="post-block-content">
+      <h3>{{post.title}}</h3>
+      <p class="post-sub"> BY {{post.author}} | {{post.publishdate | date : 'dd-MM-yyyy'}}</p>
+      <div class="post-featured-image">
+          <img src="/assets/images/gallery-images/{{post.image}}">
+      </div>
+      <ul>
+        <div markdown [data]="post.excert" id="preview"></div>
+      </ul>
+      <a routerLink="/article/{{post.id}}" class="button"><i class="ion ion-heart"></i>Read More</a>
+      <a routerLink="/article-edit/{{post.id}}" class="button"><i class="ion ion-edit"></i>Edit</a>
+  </div>
+<!--End Post Block-->
