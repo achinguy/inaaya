@@ -20,20 +20,27 @@ import { AboutModule } from './about/about.module';
 import { ServicesModule } from './services/services.module';
 import { GalleryModule } from './gallery/gallery.module';
 
+export function loadBundledAboutModule() { return AboutModule; }
+export function loadBundledServicesModule() { return ServicesModule; }
+export function loadBundledGalleryModule() { return GalleryModule; }
+export function loadBundledHomeModule() { return HomeModule; }
+export function loadBundledUserDashBoardModule() { return UserDashBoardModule; }
+
 const routes : Routes = [
   {path : '' , redirectTo : '/Home', pathMatch : 'full'},
-  {path : 'About' , loadChildren: () => AboutModule},
+  {path : 'About' , loadChildren: loadBundledAboutModule},
   {path : 'Login' , component : LoginComponent},
   {path : 'Signup' , component : SignupComponent},
   {path : 'Contactus' , component : ContactusComponent, outlet: 'popup' },
-  {path : 'Home' , loadChildren: () => HomeModule},
-  {path : 'Services' , loadChildren: () => ServicesModule},
+  {path : 'Home' , loadChildren: loadBundledHomeModule},
+  //{path : 'Home' , loadChildren: () => HomeModule}, //uncomment the line to get non lazy loading working with AoT
+  {path : 'Services' , loadChildren: loadBundledServicesModule},
   {path : 'Testimonials' , component : TestimonialComponent},
-  {path : 'Gallery' , loadChildren: () => GalleryModule},
+  {path : 'Gallery' , loadChildren: loadBundledGalleryModule},
   {path : 'Clients' , component : ClientsComponent},
   {path : 'Pricing' , component : PricingComponent},
   {path : 'subscribe', component: SubscribeComponent, outlet: 'popup' },
-  {path : 'Dashboard' , loadChildren : () => UserDashBoardModule, canActivate: [RoutegaurdService]},
+  {path : 'Dashboard' , loadChildren : loadBundledUserDashBoardModule, canActivate: [RoutegaurdService]},
   {path : 'Blog' , component : BlogComponent, canActivate: [RoutegaurdService]},
   {path : 'article/:id' , component : ArticleComponent},
   {path : 'article-edit/:id' , component : ArticleEditComponent, canActivate: [RoutegaurdService]},
