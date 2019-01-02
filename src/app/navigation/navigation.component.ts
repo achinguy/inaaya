@@ -23,8 +23,8 @@ export class NavigationComponent implements OnInit, AfterContentChecked {
   constructor(private location: Location, private auth: AuthenticationService, private config: ConfigService) { }
 
   ngOnInit() {
-    this.getMenu();
     this.menuOpen = false;
+    this.getMenu();
     this.isLoggedIn = this.auth.isLoggedIn();
     this.getUser();
   }

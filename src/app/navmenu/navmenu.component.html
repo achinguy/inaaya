@@ -7,7 +7,7 @@
          routerLinkActive = "active" [routerLinkActiveOptions] = "{exact: true}">{{menuItem.title}}</a>
       </ng-template>
       <ng-template #elseBlock>
-        <a [routerLink] = "[{outlets: {popup: [menuItem.routerLink] }}]" (click)="toggleMenu($event)"
+        <a [routerLink] = "[{outlets: {popup: [menuItem.link] }}]" (click)="toggleMenu($event)"
          routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{menuItem.title}}</a>
       </ng-template>
     </li>

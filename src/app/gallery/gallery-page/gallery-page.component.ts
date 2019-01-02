@@ -36,12 +36,12 @@ export class GalleryPageComponent implements OnInit {
        );
      }
 
-     getBlockData(database: string ) {
-       this.config.getSettings(database ).subscribe(
-         data => {
-           this.images = data;
-           console.log(this.images);
-         }
-       );
-     }
+   getBlockData(database: string ) {
+     this.config.getSettings(database ).subscribe(
+       data => {
+         this.images = data;
+         console.log(this.images);
+       }
+     );
+   }
 }
