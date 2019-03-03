@@ -34,6 +34,7 @@ import { HomeModule } from './home/home.module';
 import { AboutModule } from './about/about.module';
 import { ServicesModule } from './services/services.module';
 import { GalleryModule } from './gallery/gallery.module';
+import { ClientTryComponent } from './clients/client-try/client-try.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { GalleryModule } from './gallery/gallery.module';
     ArticleEditComponent,
     ArticleCreateComponent,
     NavmenuComponent,
-    SubscribeComponent
+    SubscribeComponent,
+    ClientTryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NgModuleFactory } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { TestimonialComponent } from './testimonial/testimonial.component';
@@ -16,31 +16,26 @@ import { ArticleCreateComponent } from './article-create/article-create.componen
 import { UserDashBoardModule } from './user-dashboard/user-dashboard.module';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { HomeModule } from './home/home.module';
+
 import { AboutModule } from './about/about.module';
 import { ServicesModule } from './services/services.module';
 import { GalleryModule } from './gallery/gallery.module';
 
-export function loadBundledAboutModule() { return AboutModule; }
-export function loadBundledServicesModule() { return ServicesModule; }
-export function loadBundledGalleryModule() { return GalleryModule; }
-export function loadBundledHomeModule() { return HomeModule; }
-export function loadBundledUserDashBoardModule() { return UserDashBoardModule; }
 
 const routes : Routes = [
   {path : '' , redirectTo : '/Home', pathMatch : 'full'},
-  {path : 'About' , loadChildren: loadBundledAboutModule},
+  {path : 'About' , loadChildren: () => AboutModule},
   {path : 'Login' , component : LoginComponent},
   {path : 'Signup' , component : SignupComponent},
   {path : 'Contactus' , component : ContactusComponent, outlet: 'popup' },
-  {path : 'Home' , loadChildren: loadBundledHomeModule},
-  //{path : 'Home' , loadChildren: () => HomeModule}, //uncomment the line to get non lazy loading working with AoT
-  {path : 'Services' , loadChildren: loadBundledServicesModule},
+  {path : 'Home' , loadChildren: () => HomeModule},
+  {path : 'Services' , loadChildren: () => ServicesModule},
   {path : 'Testimonials' , component : TestimonialComponent},
-  {path : 'Gallery' , loadChildren: loadBundledGalleryModule},
+  {path : 'Gallery' , loadChildren: () => GalleryModule},
   {path : 'Clients' , component : ClientsComponent},
   {path : 'Pricing' , component : PricingComponent},
   {path : 'subscribe', component: SubscribeComponent, outlet: 'popup' },
-  {path : 'Dashboard' , loadChildren : loadBundledUserDashBoardModule, canActivate: [RoutegaurdService]},
+  {path : 'Dashboard' , loadChildren : () => UserDashBoardModule, canActivate: [RoutegaurdService]},
   {path : 'Blog' , component : BlogComponent, canActivate: [RoutegaurdService]},
   {path : 'article/:id' , component : ArticleComponent},
   {path : 'article-edit/:id' , component : ArticleEditComponent, canActivate: [RoutegaurdService]},

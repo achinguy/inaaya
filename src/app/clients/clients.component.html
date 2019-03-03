@@ -11,8 +11,13 @@
                     eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam!</p>
             </div>
+            {{child}}<Br/>
+            <app-client-try [frmParent]="parent" (frmChild)=initializeChild($event)></app-client-try>
+
+            <h1>Testing View Encapsulation Parent</h1>
 
         </div>
+
 
         <div class="col-2-3">
 

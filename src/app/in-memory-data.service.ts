@@ -52,7 +52,7 @@ export class InMemoryDataService implements InMemoryDbService {
           {id: 'header',
             heading: 'AdMister Studios',
             headingtext: 'This website was created using Angular 6',
-            buttontext: 'do some action!',
+            buttontext: 'do some actionsss!',
             buttonlink: '/Home',
             image: 'banner-image-1.jpg'
           },
