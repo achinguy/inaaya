@@ -21,7 +21,7 @@ export class InMemoryDataService implements InMemoryDbService {
           },
           {id: 'clients',
             tagline: 'TRUST',
-            title: 'Companies who use our services 111',
+            title: 'Companies who use our services',
             description: 'Our clients',
           },
           {id: 'services',
