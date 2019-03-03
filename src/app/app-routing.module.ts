@@ -24,11 +24,11 @@ import { GalleryModule } from './gallery/gallery.module';
 
 const routes : Routes = [
   {path : '' , redirectTo : '/Home', pathMatch : 'full'},
-  {path : 'About' , loadChildren: () => AboutModule},
+  {path : 'About' , loadChildren: AboutModule},
   {path : 'Login' , component : LoginComponent},
   {path : 'Signup' , component : SignupComponent},
   {path : 'Contactus' , component : ContactusComponent, outlet: 'popup' },
-  {path : 'Home' , loadChildren: () => HomeModule},
+  {path : 'Home' , loadChildren: './home/home.module#HomeModule'},
   {path : 'Services' , loadChildren: () => ServicesModule},
   {path : 'Testimonials' , component : TestimonialComponent},
   {path : 'Gallery' , loadChildren: () => GalleryModule},
