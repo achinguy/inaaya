@@ -84,7 +84,7 @@ export const configuration = {
         developerlink: 'http://admister.in',
     },
     socialsites: [
-        {title: 'Facebook', target: '_blank', username: 'jagmohan', icon: 'facebook'},
+        {title: 'Facebook', target: '_blank', username: 'achinsaggi', icon: 'facebook'},
         {title: 'Google+', target: '_blank', username: '+jagmohan', icon: 'google-plus'},
         {title: 'Twitter', target: '_blank', username: 'jagmohan', icon: 'twitter'},
         {title: 'Instagram', target: '_blank', username: 'jagmohan', icon: 'instagram'},
